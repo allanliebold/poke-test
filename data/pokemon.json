@@ -1,0 +1,67 @@
+[
+  {
+    "id": "001",
+    "name": "bulbasaur",
+    "type": ["grass", "poison"]
+  },
+  {
+    "id": "004",
+    "name": "charmander",
+    "type": ["fire"]
+  },
+  {
+    "id": "007",
+    "name": "squirtle",
+    "type": ["water"]
+  },
+  {
+    "id": "010",
+    "name": "caterpie",
+    "type":["bug"]
+  },
+  {
+    "id": "013",
+    "name": "weedle",
+    "type": ["bug", "poison"]
+  },
+  {
+    "id": "016",
+    "name": "pidgey",
+    "type": ["normal", "flying"]
+  },
+  {
+    "id": "019",
+    "name": "rattata",
+    "type": ["normal"]
+  },
+  {
+    "id": "025",
+    "name": "pikachu",
+    "type": ["electric"]
+  },
+  {
+    "id": "027",
+    "name": "sandshrew",
+    "type": ["ground"]
+  },
+  {
+    "id": "037",
+    "name": "vulpix",
+    "type": ["fire"]
+  },
+  {
+    "id": "046",
+    "name": "paras",
+    "type": ["bug", "grass"]
+  },
+  {
+    "id": "050",
+    "name": "diglett",
+    "type": ["ground"]
+  },
+  {
+    "id": "052",
+    "name": "meowth",
+    "type": ["normal"]
+  }
+]

@@ -2,19 +2,33 @@
 <html>
   <head>
     <script id="pokemon-template" type="text/x-handlebars-template">
-      <li>
-        <p>{{name}}</p>
-        <p>{{id}}</p>
-        <p>{{type}}</p>
+      <li class='dex-entry' data-type="{{first-type}}">
+        <p>Name: {{name}}</p>
+        <p>ID: {{id}}</p>
+        <p>Type: {{type}}</p>
       </li>
+    </script>
   </head>
 
   <body>
-    <div id="pokemon"></div>
-    <ul></ul>
+      <select id="type-filter">
+        <option value="">Select Type</option>
+        <option value="grass">Grass</option>
+        <option value="water">Water</option>
+        <option value="fire">Fire</option>
+      </select>
+    </section>
+    <div id="pokedex">
+      <ul></ul>
+    </div>
   </body>
 
   <script src="jquery.js"></script>
   <script src="handlebars.js"></script>
-  <script src="app.js"></script>
+  <script src="/data/pokemon.json"></script>
+  <script src="/scripts/pokedexView.js"></script>
+  <script src="/scripts/pokemon.js"></script>
+  <script>
+    Pokemon.fetchAll();
+  </script>
 </html>
