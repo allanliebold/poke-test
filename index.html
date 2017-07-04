@@ -2,7 +2,7 @@
 <html>
   <head>
     <script id="pokemon-template" type="text/x-handlebars-template">
-      <li class='dex-entry' data-type="{{first-type}}">
+      <li class="dex-entry" data-type="{{typeFilter}}">
         <p>Name: {{name}}</p>
         <p>ID: {{id}}</p>
         <p>Type: {{type}}</p>
@@ -16,6 +16,9 @@
         <option value="grass">Grass</option>
         <option value="water">Water</option>
         <option value="fire">Fire</option>
+        <option value="bug">Bug</option>
+        <option value="normal">Normal</option>
+        <option value="electric">Electric</option>
       </select>
     </section>
     <div id="pokedex">

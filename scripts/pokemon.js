@@ -4,6 +4,7 @@ function Pokemon(rawDataObj){
   this.id = rawDataObj.id;
   this.name = rawDataObj.name.charAt(0).toUpperCase() + rawDataObj.name.slice(1);
   this.type = rawDataObj.type;
+  this.typeFilter = rawDataObj.type[0];
 }
 
 Pokemon.all = [];
