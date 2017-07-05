@@ -49,7 +49,7 @@ Pokemon.fetchAll = function() {
     pokedex = JSON.parse(localStorage.rawData);
     pokedexView.initIndexPage();
   } else {
-    $.getJSON(pokeUrl + 'pokemon/?limit=10', function(data) {
+    $.getJSON(pokeUrl + 'pokemon/?limit=50', function(data) {
       var i;
       for(i in data.results) {
         $.getJSON(data.results[i].url)
