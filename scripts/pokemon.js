@@ -4,6 +4,7 @@ function Pokemon(data){
   this.id = data.id;
   this.name = data.name.charAt(0).toUpperCase() + data.name.slice(1);
   this.type = data.types[0].type.name;
+  this.sprite = data.sprites.front_default;
   // this.secondType = data.type[1].type.name;
   // this.typeFilter = data.type[0];
 }
@@ -49,21 +50,27 @@ Pokemon.fetchAll = function() {
     pokedex = JSON.parse(localStorage.rawData);
     pokedexView.initIndexPage();
   } else {
-    $.getJSON(pokeUrl + 'pokemon/?limit=50', function(data) {
-      var i;
-      for(i in data.results) {
-        $.getJSON(data.results[i].url)
-        .then(function(data){
-        console.log('data: ', data);
-        pokedex.push(data);
-        })
+    $.ajax({
+      url: pokeUrl + 'pokemon/?limit=5',
+      type: 'GET',
+      success: function(data) {
+        var i;
+        for(i in data.results) {
+          $.getJSON(data.results[i].url)
+          .then(function(data){
+            console.log('data: ', data);
+            pokedex.push(data);
+          })
+        }
+      },
+      error: function(err) {
+        console.err('err: ', err);
       }
     }).then(function(){
-      localStorage.rawData = JSON.stringify(pokedex);
-      console.log('localStorage: ', localStorage.rawData);
-      // localStorage.ETag = serverETag;
-    }), function(err) {
-          console.err('error: ', err);
-       }
-     };
+        function savePokemonData(pokedex){
+          localStorage.rawData = JSON.stringify(pokedex);
+          console.log('localStorage: ', localStorage.rawData);
+        }
+      })
+    }
 }
