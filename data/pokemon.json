@@ -35,6 +35,11 @@
     "type": ["normal"]
   },
   {
+    "id": "023",
+    "name": "ekans",
+    "type": ["poison"]
+  },
+  {
     "id": "025",
     "name": "pikachu",
     "type": ["electric"]
@@ -45,9 +50,19 @@
     "type": ["ground"]
   },
   {
+    "id": "029",
+    "name": "nidoran-f",
+    "type": ["poison"]
+  },
+  {
     "id": "037",
     "name": "vulpix",
     "type": ["fire"]
+  },
+  {
+    "id": "043",
+    "name": "oddish",
+    "type": ["grass", "poison"]
   },
   {
     "id": "046",
@@ -63,5 +78,10 @@
     "id": "052",
     "name": "meowth",
     "type": ["normal"]
+  },
+  {
+    "id": "152",
+    "name": "chikorita",
+    "type": ["grass"]
   }
 ]

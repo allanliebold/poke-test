@@ -2,7 +2,7 @@
 <html>
   <head>
     <script id="pokemon-template" type="text/x-handlebars-template">
-      <li class="dex-entry" data-type="{{typeFilter}}">
+      <li class="dex-entry" data-id="{{genFilter}}" data-type="{{typeFilter}}">
         <p>Name: {{name}}</p>
         <p>ID: {{id}}</p>
         <p>Type: {{type}}</p>
@@ -11,12 +11,19 @@
   </head>
 
   <body>
+      <select id="gen-filter">
+        <option value="">Select Generation</option>
+        <option value="first-gen">1st Generation (RBY)</option>
+        <option value="second-gen">2nd Generation (GSC)</option>
+      </select>
+
       <select id="type-filter">
         <option value="">Select Type</option>
         <option value="grass">Grass</option>
         <option value="water">Water</option>
         <option value="fire">Fire</option>
         <option value="bug">Bug</option>
+        <option value="poison">Poison</option>
         <option value="normal">Normal</option>
         <option value="electric">Electric</option>
       </select>
