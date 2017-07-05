@@ -2,11 +2,11 @@
 <html>
   <head>
     <script id="pokemon-template" type="text/x-handlebars-template">
-      <li class="dex-entry" data-id="{{genFilter}}" data-type="{{type}}">
+      <li class="dex-entry" data-id="{{genFilter}}" data-type="{{type}}" data-secondtype="{{secondType}}">
         <p>Name: {{name}}</p>
         <p><img src="{{sprite}}"></p>
         <p>ID: {{id}}</p>
-        <p>Type: {{type}}</p>
+        <p>Type: {{type}}, {{secondType}}</p>
       </li>
     </script>
   </head>

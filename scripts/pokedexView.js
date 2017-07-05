@@ -38,6 +38,7 @@ pokedexView.handleTypeFilter = function() {
     if($(this).val()) {
       $('.dex-entry').hide();
       $(`.dex-entry[data-type="${$(this).val()}"]`).fadeIn();
+      $(`.dex-entry[data-secondtype="${$(this).val()}"]`).fadeIn();
     } else {
       $('.dex-entry').fadeIn();
     }

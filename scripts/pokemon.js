@@ -3,9 +3,14 @@
 function Pokemon(data){
   this.id = data.id;
   this.name = data.name.charAt(0).toUpperCase() + data.name.slice(1);
-  this.type = data.types[0].type.name;
   this.sprite = data.sprites.front_default;
-  // this.secondType = data.type[1].type.name;
+  this.type = data.types[0].type.name;
+
+  if(data.types.length > 1) {
+    this.secondType = data.types[1].type.name;
+  } else {
+    this.secondType = '';
+  }
   // this.typeFilter = data.type[0];
 }
 
@@ -26,26 +31,7 @@ Pokemon.prototype.toHtml = function() {
   return template(this);
 }
 
-Pokemon.loadAll = function(rawData) {
-  rawData.forEach(function(pokemon) {
-    Pokemon.all.push(new Pokemon(pokemon));
-  })
-}
-
 Pokemon.fetchAll = function() {
-  var serverETag;
-
-  // $.ajax({
-  //   url: pokeUrl,
-  //   type: 'HEAD',
-  //   success: function(data, message, xhr) {
-  //     serverETag = xhr.getResponseHeader('ETag');
-  //   },
-  //   fail: function(err) {
-  //     console.error(err);
-  //   }
-  // });
-
   if(localStorage.rawData) {
     pokedex = JSON.parse(localStorage.rawData);
     pokedexView.initIndexPage();
@@ -54,9 +40,8 @@ Pokemon.fetchAll = function() {
       url: pokeUrl + 'pokemon/?limit=5',
       type: 'GET',
       success: function(data) {
-        var i;
-        for(i in data.results) {
-          $.getJSON(data.results[i].url)
+        for(var idx in data.results) {
+          $.getJSON(data.results[idx].url)
           .then(function(data){
             console.log('data: ', data);
             pokedex.push(data);
